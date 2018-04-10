@@ -15,7 +15,11 @@ module.exports = {
     context: SRC_PATH,
 
     resolve: {
-        extensions: ['.js', '.vue'] // 同时支持 js 和 vue
+        extensions: ['.js', '.vue'], // 同时支持 js 和 vue
+        alias: {
+            'vue': 'vue/dist/vue.esm.js',
+            '@': SRC_PATH
+        }
     },
 
     entry: {
@@ -31,7 +35,7 @@ module.exports = {
         path: ASSETS_BUILD_PATH,
         publicPath: ASSETS_PUBLIC_PATH,
         filename: '[name].js',
-        chunkFilename: '[name].js',
+        chunkFilename: '[name].chunk.js',
     },
 
     module: {

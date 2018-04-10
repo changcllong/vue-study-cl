@@ -3,8 +3,8 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const config = require('./webpack.base.config');
 const WebpackMd5Hash = require('webpack-md5-hash');
 
-config.output.filename = './[name]@[chunkhash].js';
-config.output.chunkFilename = './[name]@[chunkhash].js';
+config.output.filename = '[name]@[chunkhash].js';
+config.output.chunkFilename = '[name].chunk@[chunkhash].js';
 
 config.module.rules.push(
     {
@@ -25,7 +25,7 @@ config.module.rules.push(
 config.plugins.push(
     // 官方文档推荐使用下面的插件确保 NODE_ENV
     new webpack.DefinePlugin({
-        'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'production')
+        'process.env.NODE_ENV': JSON.stringify('production')
     }),
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.optimize.UglifyJsPlugin({
@@ -41,7 +41,7 @@ config.plugins.push(
     new webpack.HashedModuleIdsPlugin(),
     // 抽取 CSS 文件
     new ExtractTextPlugin({
-        filename: '[name]@[chunkhash].css',
+        filename: '[name]@[contenthash].css',
         allChunks: true,
         ignoreOrder: true
     })

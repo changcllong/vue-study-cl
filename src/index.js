@@ -1,7 +1,12 @@
 import Vue from 'vue';
+import '@/common/style/index.scss';
+import router from '@/router';
+import App from '@/App';
 
-new Vue({
-    render: h => {
-        return <div>hello VUE</div>;
-    }
-}).$mount('#app');
+console.log(router);
+
+console.log(new Vue({
+    router,
+    components: { App },
+    template: '<App/>'
+}).$mount('#app'));
