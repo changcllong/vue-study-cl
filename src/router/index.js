@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-// import Main from '@/pages/main';
+import Main from '@/pages/main';
 
 Vue.use(Router);
 
@@ -9,7 +9,7 @@ export default new Router({
         {
             path: '/',
             name: 'main',
-            component: () => import('@/pages/main')
+            component: Main // () => import('@/pages/main')
         }
     ]
 });

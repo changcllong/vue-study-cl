@@ -27,7 +27,8 @@ module.exports = {
         vendor: [
             'babel-polyfill',
             'vue',
-            'vue-router'
+            'vue-router',
+            'vuex'
         ]
     },
 
