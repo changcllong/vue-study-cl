@@ -2,7 +2,7 @@
     <section :class="rootClass">
         <h2>Hello Vue</h2>
         <parent title="parent" >
-            <textarea v-model="value" />
+            <textarea slot-scope="slotProps" v-model="value" />
         </parent>
         <child class="a">
             <child>
