@@ -56,5 +56,14 @@ export default {
 .cv-main {
     margin: 0 10px;
 }
+[class*=b] {
+    color: blueviolet;
+}
+:last-child {
+    color: aquamarine;
+}
+.b {
+    color: burlywood;
+}
 </style>
 
